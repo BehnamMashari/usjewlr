@@ -9,17 +9,15 @@
 <body>
 
 <div class="page-transition" id="page-transition"></div>
-
-<!-- Announcement -->
 <div class="announcement" id="announcement-bar"></div>
 
-<!-- Header -->
 <header id="header">
   <div class="header-inner">
     <a href="index.html" class="logo">US<span>JEWLR</span></a>
     <nav id="main-nav">
       <a href="index.html" class="active">Home</a>
       <a href="shop.html">Shop</a>
+      <a href="shop.html?occ=occasions">Occasions</a>
       <a href="product.html">Collections</a>
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
@@ -33,69 +31,106 @@
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
         Bag <span class="cart-count">0</span>
       </button>
-      <button class="hamburger" id="hamburger" aria-label="Menu">
-        <span></span><span></span><span></span>
-      </button>
+      <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
   </div>
 </header>
 
 <!-- Hero -->
 <section class="hero">
-  <div class="hero-content">
-    <span class="section-label hero-anim-1">New Collection 2026</span>
-    <h1 class="hero-anim-2">Adorn<br>Yourself in<br><em>Timeless</em><br>Elegance</h1>
-    <p class="hero-anim-3">Handcrafted fine jewelry that celebrates life's most cherished moments. Each piece tells a story as unique as you are.</p>
-    <div class="hero-cta hero-anim-4">
-      <a href="shop.html" class="btn btn-filled">Shop Collection</a>
-      <a href="about.html" class="btn">Our Story</a>
-    </div>
+  <div class="hero-content" id="hero-content"></div>
+  <div class="hero-image hero-img-anim" id="hero-media">
+    <img src="images/hero.jpg" alt="Fine jewelry collection" id="hero-photo">
+    <video id="hero-video" muted playsinline preload="auto"></video>
   </div>
-  <div class="hero-image hero-img-anim">
-    <img src="images/hero.jpg" alt="Fine jewelry collection">
-    <div class="hero-badge">
-      <strong>Est. 2018</strong>
-      <span>Handcrafted in USA</span>
+</section>
+
+<!-- Shop by Occasion -->
+<section class="section occasions-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Shop by Moment</span>
+      <h2>Every Occasion <em>Deserves</em> Fine Jewelry</h2>
+    </div>
+    <div class="occasions-grid">
+      <a href="shop.html?occ=engagement" class="occasion-card">
+        <img src="images/prod-1.jpg" alt="Engagement">
+        <div class="occasion-overlay">
+          <h3>Engagement</h3>
+          <span>Shop Rings &rsaquo;</span>
+        </div>
+      </a>
+      <a href="shop.html?occ=anniversary" class="occasion-card">
+        <img src="images/prod-7.jpg" alt="Anniversary">
+        <div class="occasion-overlay">
+          <h3>Anniversary</h3>
+          <span>Shop Gifts &rsaquo;</span>
+        </div>
+      </a>
+      <a href="shop.html?occ=wedding" class="occasion-card">
+        <img src="images/prod-4.jpg" alt="Wedding">
+        <div class="occasion-overlay">
+          <h3>Wedding</h3>
+          <span>Bridal Collection &rsaquo;</span>
+        </div>
+      </a>
+      <a href="shop.html?occ=birthday" class="occasion-card">
+        <img src="images/prod-3.jpg" alt="Birthday">
+        <div class="occasion-overlay">
+          <h3>Birthday</h3>
+          <span>Shop Gifts &rsaquo;</span>
+        </div>
+      </a>
+      <a href="shop.html?occ=graduation" class="occasion-card">
+        <img src="images/prod-6.jpg" alt="Graduation">
+        <div class="occasion-overlay">
+          <h3>Graduation</h3>
+          <span>Celebrate Her &rsaquo;</span>
+        </div>
+      </a>
+      <a href="shop.html?occ=gifts" class="occasion-card">
+        <img src="images/prod-2.jpg" alt="Gift Ideas">
+        <div class="occasion-overlay">
+          <h3>Gift Ideas</h3>
+          <span>Shop by Price &rsaquo;</span>
+        </div>
+      </a>
     </div>
   </div>
 </section>
 
-<!-- Categories -->
-<section class="section">
+<!-- Event / Season Feature Banner (JS-populated) -->
+<div id="event-feature-banner"></div>
+
+<!-- Shop the Look -->
+<section class="section stl-section">
   <div class="container">
     <div class="section-header">
-      <span class="section-label">Browse by Category</span>
-      <h2>Shop Our <em>Collections</em></h2>
+      <span class="section-label">Editorial</span>
+      <h2>Shop the <em>Look</em></h2>
     </div>
-    <div class="categories-grid">
-      <a href="shop.html?cat=rings" class="category-card">
-        <img src="images/cat-collections.jpg" alt="Rings">
-        <div class="category-info">
-          <h3>Rings</h3>
-          <span>48 pieces</span>
+    <div class="stl-grid">
+      <div class="stl-card">
+        <img src="images/hero.jpg" alt="The Classic Look">
+        <div class="stl-overlay">
+          <p>The Classic Look</p>
+          <a href="shop.html" class="btn">Shop Now</a>
         </div>
-      </a>
-      <a href="shop.html?cat=necklaces" class="category-card">
-        <img src="images/cat-necklaces.jpg" alt="Necklaces">
-        <div class="category-info">
-          <h3>Necklaces</h3>
-          <span>62 pieces</span>
+      </div>
+      <div class="stl-card">
+        <img src="images/detail-main.jpg" alt="The Statement Look">
+        <div class="stl-overlay">
+          <p>The Statement Look</p>
+          <a href="shop.html" class="btn">Shop Now</a>
         </div>
-      </a>
-      <a href="shop.html?cat=earrings" class="category-card">
-        <img src="images/cat-earrings.jpg" alt="Earrings">
-        <div class="category-info">
-          <h3>Earrings</h3>
-          <span>55 pieces</span>
+      </div>
+      <div class="stl-card">
+        <img src="images/hero-product.jpg" alt="The Full Set">
+        <div class="stl-overlay">
+          <p>The Full Set</p>
+          <a href="shop.html" class="btn">Shop Now</a>
         </div>
-      </a>
-      <a href="shop.html?cat=bracelets" class="category-card">
-        <img src="images/cat-bracelets.jpg" alt="Bracelets">
-        <div class="category-info">
-          <h3>Bracelets</h3>
-          <span>39 pieces</span>
-        </div>
-      </a>
+      </div>
     </div>
   </div>
 </section>
@@ -109,57 +144,53 @@
       <p>Discover our most-loved jewelry, crafted with the finest materials.</p>
     </div>
     <div class="products-grid">
-
       <div class="product-card" onclick="window.location='product.html'">
         <div class="product-card-image">
           <img src="images/prod-1.jpg" alt="Diamond Solitaire Ring">
           <span class="product-badge sale">Bestseller</span>
           <div class="product-actions">
-            <button class="btn-cart" onclick="event.stopPropagation();addToCart('r001','Diamond Solitaire Ring',2450,'images/prod-1.jpg','14K Gold')">Add to Bag</button>
+            <button class="btn-cart" onclick="event.stopPropagation();addToCart('r001','Diamond Solitaire Ring',2450,'images/prod-1.jpg','14K Yellow Gold')">Add to Bag</button>
             <button class="btn-wishlist">Save to Wishlist</button>
           </div>
         </div>
         <div class="product-info">
-          <div class="stars">★★★★★</div>
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
           <h4>Diamond Solitaire Ring</h4>
-          <div class="product-sub">14K Yellow Gold · 1.0ct</div>
+          <div class="product-sub">14K Yellow Gold &middot; 1.0ct</div>
           <div class="product-price">$2,450</div>
         </div>
       </div>
-
       <div class="product-card" onclick="window.location='product.html'">
         <div class="product-card-image">
           <img src="images/prod-2.jpg" alt="Pearl Drop Necklace">
           <div class="product-actions">
-            <button class="btn-cart" onclick="event.stopPropagation();addToCart('n001','Pearl Drop Necklace',385,'images/prod-2.jpg','Sterling Silver')">Add to Bag</button>
+            <button class="btn-cart" onclick="event.stopPropagation();addToCart('n001','Pearl Drop Necklace',385,'images/prod-2.jpg','14K Yellow Gold')">Add to Bag</button>
             <button class="btn-wishlist">Save to Wishlist</button>
           </div>
         </div>
         <div class="product-info">
-          <div class="stars">★★★★★</div>
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
           <h4>Pearl Drop Necklace</h4>
-          <div class="product-sub">Sterling Silver · 18"</div>
+          <div class="product-sub">14K Yellow Gold &middot; 18&rdquo;</div>
           <div class="product-price">$385</div>
         </div>
       </div>
-
       <div class="product-card" onclick="window.location='product.html'">
         <div class="product-card-image">
           <img src="images/prod-3.jpg" alt="Gold Hoop Earrings">
           <span class="product-badge sale">Sale</span>
           <div class="product-actions">
-            <button class="btn-cart" onclick="event.stopPropagation();addToCart('e001','Gold Hoop Earrings',195,'images/prod-3.jpg','18K Gold')">Add to Bag</button>
+            <button class="btn-cart" onclick="event.stopPropagation();addToCart('e001','Gold Hoop Earrings',195,'images/prod-3.jpg','18K Yellow Gold')">Add to Bag</button>
             <button class="btn-wishlist">Save to Wishlist</button>
           </div>
         </div>
         <div class="product-info">
-          <div class="stars">★★★★☆</div>
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
           <h4>Gold Hoop Earrings</h4>
-          <div class="product-sub">18K Gold · 30mm</div>
+          <div class="product-sub">18K Yellow Gold &middot; 30mm</div>
           <div class="product-price"><span class="original">$260</span><span class="sale-price">$195</span></div>
         </div>
       </div>
-
       <div class="product-card" onclick="window.location='product.html'">
         <div class="product-card-image">
           <img src="images/prod-4.jpg" alt="Tennis Bracelet">
@@ -170,13 +201,12 @@
           </div>
         </div>
         <div class="product-info">
-          <div class="stars">★★★★★</div>
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
           <h4>Diamond Tennis Bracelet</h4>
-          <div class="product-sub">14K White Gold · 3.0ct tw</div>
+          <div class="product-sub">14K White Gold &middot; 3.0ct tw</div>
           <div class="product-price">$3,200</div>
         </div>
       </div>
-
     </div>
     <div style="text-align:center;margin-top:48px">
       <a href="shop.html" class="btn">View All Jewelry</a>
@@ -225,14 +255,14 @@
           <img src="images/prod-5.jpg" alt="Sapphire Ring">
           <span class="product-badge">New</span>
           <div class="product-actions">
-            <button class="btn-cart" onclick="event.stopPropagation();addToCart('r002','Sapphire Halo Ring',1850,'images/prod-5.jpg','Platinum')">Add to Bag</button>
+            <button class="btn-cart" onclick="event.stopPropagation();addToCart('r002','Sapphire Halo Ring',1850,'images/prod-5.jpg','14K White Gold')">Add to Bag</button>
             <button class="btn-wishlist">Save to Wishlist</button>
           </div>
         </div>
         <div class="product-info">
-          <div class="stars">★★★★★</div>
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
           <h4>Sapphire Halo Ring</h4>
-          <div class="product-sub">Platinum · 1.5ct</div>
+          <div class="product-sub">14K White Gold &middot; 1.5ct</div>
           <div class="product-price">$1,850</div>
         </div>
       </div>
@@ -241,14 +271,14 @@
           <img src="images/prod-6.jpg" alt="Layered Chain Necklace">
           <span class="product-badge">New</span>
           <div class="product-actions">
-            <button class="btn-cart" onclick="event.stopPropagation();addToCart('n002','Layered Chain Necklace',295,'images/prod-6.jpg','14K Gold')">Add to Bag</button>
+            <button class="btn-cart" onclick="event.stopPropagation();addToCart('n002','Layered Chain Necklace',295,'images/prod-6.jpg','14K Yellow Gold')">Add to Bag</button>
             <button class="btn-wishlist">Save to Wishlist</button>
           </div>
         </div>
         <div class="product-info">
-          <div class="stars">★★★★☆</div>
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
           <h4>Layered Chain Necklace</h4>
-          <div class="product-sub">14K Gold · 16–18"</div>
+          <div class="product-sub">14K Yellow Gold &middot; 16&ndash;18&rdquo;</div>
           <div class="product-price">$295</div>
         </div>
       </div>
@@ -262,9 +292,9 @@
           </div>
         </div>
         <div class="product-info">
-          <div class="stars">★★★★★</div>
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
           <h4>Diamond Stud Earrings</h4>
-          <div class="product-sub">14K White Gold · 0.5ct</div>
+          <div class="product-sub">14K White Gold &middot; 0.5ct</div>
           <div class="product-price">$780</div>
         </div>
       </div>
@@ -273,14 +303,14 @@
           <img src="images/prod-8.jpg" alt="Charm Bracelet">
           <span class="product-badge">New</span>
           <div class="product-actions">
-            <button class="btn-cart" onclick="event.stopPropagation();addToCart('b002','Charm Bracelet',445,'images/prod-8.jpg','Sterling Silver')">Add to Bag</button>
+            <button class="btn-cart" onclick="event.stopPropagation();addToCart('b002','Charm Bracelet',445,'images/prod-8.jpg','Rose Gold')">Add to Bag</button>
             <button class="btn-wishlist">Save to Wishlist</button>
           </div>
         </div>
         <div class="product-info">
-          <div class="stars">★★★★★</div>
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
           <h4>Charm Bracelet</h4>
-          <div class="product-sub">Sterling Silver · Adjustable</div>
+          <div class="product-sub">Rose Gold &middot; Adjustable</div>
           <div class="product-price">$445</div>
         </div>
       </div>
@@ -297,19 +327,19 @@
     </div>
     <div class="testimonials-grid">
       <div class="testimonial-card">
-        <div class="stars">★★★★★</div>
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
         <blockquote>"The diamond ring I purchased for my anniversary exceeded every expectation. The quality is extraordinary and the packaging made it feel truly special."</blockquote>
-        <div class="testimonial-author">— Sarah M., New York</div>
+        <div class="testimonial-author">&mdash; Sarah M., New York</div>
       </div>
       <div class="testimonial-card">
-        <div class="stars">★★★★★</div>
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
         <blockquote>"I've ordered from USJEWLR three times now. Each piece is more beautiful than the last. The customer service is impeccable and delivery always on time."</blockquote>
-        <div class="testimonial-author">— Jennifer L., Chicago</div>
+        <div class="testimonial-author">&mdash; Jennifer L., Chicago</div>
       </div>
       <div class="testimonial-card">
-        <div class="stars">★★★★★</div>
-        <blockquote>"My pearl necklace is absolutely stunning. I receive compliments every time I wear it. Worth every penny — you can feel the craftsmanship."</blockquote>
-        <div class="testimonial-author">— Amanda K., Los Angeles</div>
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>"My pearl necklace is absolutely stunning. I receive compliments every time I wear it. Worth every penny &mdash; you can feel the craftsmanship."</blockquote>
+        <div class="testimonial-author">&mdash; Amanda K., Los Angeles</div>
       </div>
     </div>
   </div>
@@ -336,10 +366,7 @@
         <div class="logo">US<span>JEWLR</span></div>
         <p>Fine jewelry crafted with passion and precision. Each piece is a testament to timeless elegance and superior craftsmanship.</p>
         <div class="footer-social">
-          <a href="#">in</a>
-          <a href="#">tw</a>
-          <a href="#">ig</a>
-          <a href="#">fb</a>
+          <a href="#">in</a><a href="#">tw</a><a href="#">ig</a><a href="#">fb</a>
         </div>
       </div>
       <div class="footer-col">
@@ -354,13 +381,22 @@
         </ul>
       </div>
       <div class="footer-col">
+        <h5>Occasions</h5>
+        <ul>
+          <li><a href="shop.html?occ=engagement">Engagement</a></li>
+          <li><a href="shop.html?occ=wedding">Wedding</a></li>
+          <li><a href="shop.html?occ=anniversary">Anniversary</a></li>
+          <li><a href="shop.html?occ=birthday">Birthday</a></li>
+          <li><a href="shop.html?occ=graduation">Graduation</a></li>
+          <li><a href="shop.html?occ=gifts">Gift Ideas</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
         <h5>Help</h5>
         <ul>
           <li><a href="#">Size Guide</a></li>
           <li><a href="#">Shipping Info</a></li>
-          <li><a href="#">Returns & Exchanges</a></li>
-          <li><a href="#">Care Instructions</a></li>
-          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Returns</a></li>
           <li><a href="contact.html">Contact Us</a></li>
         </ul>
       </div>
@@ -369,22 +405,15 @@
         <ul>
           <li><a href="about.html">Our Story</a></li>
           <li><a href="#">Sustainability</a></li>
-          <li><a href="#">Press</a></li>
-          <li><a href="#">Careers</a></li>
           <li><a href="#">Privacy Policy</a></li>
           <li><a href="#">Terms of Service</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 USJEWLR. All rights reserved.</span>
+      <span>&copy; 2026 USJEWLR. All rights reserved.</span>
       <div class="payment-icons">
-        <span>VISA</span>
-        <span>MC</span>
-        <span>AMEX</span>
-        <span>PayPal</span>
-        <span>Apple Pay</span>
-        <span>Google Pay</span>
+        <span>VISA</span><span>MC</span><span>AMEX</span><span>PayPal</span><span>Apple Pay</span><span>Google Pay</span>
       </div>
     </div>
   </div>
@@ -395,14 +424,11 @@
 <div class="cart-drawer" id="cart-drawer">
   <div class="drawer-header">
     <h3>Your Bag</h3>
-    <button class="drawer-close" onclick="closeCartDrawer()">×</button>
+    <button class="drawer-close" onclick="closeCartDrawer()">&times;</button>
   </div>
   <div class="drawer-items" id="drawer-items"></div>
   <div class="drawer-footer">
-    <div class="drawer-total">
-      <span>Total</span>
-      <span id="drawer-total">$0.00</span>
-    </div>
+    <div class="drawer-total"><span>Total</span><span id="drawer-total">$0.00</span></div>
     <a href="cart.html" class="btn btn-filled">View Bag</a>
     <a href="checkout.html" class="btn">Checkout</a>
   </div>
@@ -410,5 +436,95 @@
 
 <script src="events-config.js"></script>
 <script src="script.js"></script>
+<script>
+  /* ── Hero content from events-config ── */
+  (function() {
+    var today = new Date().toISOString().slice(0,10);
+    var ev = null;
+    if (typeof PROMO_EVENTS !== 'undefined') {
+      for (var i = 0; i < PROMO_EVENTS.length; i++) {
+        var e = PROMO_EVENTS[i];
+        if (e.active || (today >= e.start && today <= e.end)) { ev = e; break; }
+      }
+    }
+    var h = (ev && ev.hero) ? ev.hero : (typeof DEFAULT_PROMO !== 'undefined' ? DEFAULT_PROMO.hero : null);
+    if (!h) return;
+    var el = document.getElementById('hero-content');
+    if (!el) return;
+    el.innerHTML =
+      '<span class="section-label hero-anim-1">' + h.label + '</span>' +
+      '<h1 class="hero-anim-2">' + h.headline + '</h1>' +
+      '<p class="hero-anim-3">' + h.sub + '</p>' +
+      '<div class="hero-cta hero-anim-4">' +
+        '<a href="' + h.ctaLink + '" class="btn btn-filled">' + h.cta + '</a>' +
+        (h.cta2 ? '<a href="' + h.cta2Link + '" class="btn">' + h.cta2 + '</a>' : '') +
+      '</div>';
+  })();
+
+  /* ── Hero video playlist ── */
+  (function() {
+    var photo = document.getElementById('hero-photo');
+    var video = document.getElementById('hero-video');
+    if (!photo || !video) return;
+    var playlist = ['images/hero-video.mp4','images/hero-video-2.mp4','images/hero-video-3.mp4'];
+    var current = 0;
+    function playNext() {
+      video.src = playlist[current];
+      video.load();
+      video.play().catch(function(){});
+      current = (current + 1) % playlist.length;
+    }
+    video.addEventListener('ended', playNext);
+    setTimeout(function() {
+      photo.style.opacity = '0';
+      video.style.opacity = '1';
+      playNext();
+    }, 2000);
+  })();
+
+  /* ── Event Feature Banner ── */
+  (function() {
+    var el = document.getElementById('event-feature-banner');
+    if (!el || typeof PROMO_EVENTS === 'undefined') return;
+
+    var today = new Date().toISOString().slice(0,10);
+    var event = null;
+    for (var i = 0; i < PROMO_EVENTS.length; i++) {
+      var e = PROMO_EVENTS[i];
+      if (e.active || (today >= e.start && today <= e.end)) { event = e; break; }
+    }
+
+    var bg, color, tag, headline, sub, code, img;
+    if (event) {
+      bg = event.bg; color = event.color;
+      tag = event.name;
+      headline = event.message;
+      sub = event.discount;
+      code = event.code;
+      img = 'images/detail-main.jpg';
+    } else {
+      bg = 'var(--dark)'; color = 'var(--cream)';
+      tag = 'Bridal Collection';
+      headline = 'The Ring She Has Always Dreamed Of';
+      sub = 'Handcrafted engagement rings &amp; bridal sets';
+      code = '';
+      img = 'images/prod-1.jpg';
+    }
+
+    el.innerHTML =
+      '<div class="efb-wrap" style="background:' + bg + ';color:' + color + '">' +
+        '<div class="efb-inner">' +
+          '<div class="efb-text">' +
+            '<span class="efb-tag" style="color:' + color + ';opacity:.7">' + tag + '</span>' +
+            '<h2>' + headline + '</h2>' +
+            '<p>' + sub + '</p>' +
+            (code ? '<div class="efb-code">Use code <strong>' + code + '</strong></div>' : '') +
+            '<a href="shop.html" class="btn" style="border-color:' + color + ';color:' + color + '">Shop Now</a>' +
+          '</div>' +
+          '<div class="efb-image"><img src="' + img + '" alt=""></div>' +
+        '</div>' +
+      '</div>';
+  })();
+</script>
 </body>
 </html>

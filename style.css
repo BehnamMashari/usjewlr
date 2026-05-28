@@ -1,21 +1,21 @@
 /* ============================================
    USJEWLR — Jewelry Ecommerce Stylesheet
-   Theme: Greige & Beige, Chic & Minimal
+   Theme: Sage Green, Chic & Minimal
    ============================================ */
 
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap');
 
 :root {
-  --cream:     #faf6f1;
-  --beige:     #f0e8de;
-  --greige:    #d9cdc1;
-  --mid:       #b8a898;
-  --stone:     #8b7355;
-  --dark:      #2c2320;
-  --charcoal:  #4a3f38;
+  --cream:     #f4f7f4;
+  --beige:     #e6efe6;
+  --greige:    #c8d8c5;
+  --mid:       #8faa8c;
+  --stone:     #5c7a58;
+  --dark:      #1e2e1e;
+  --charcoal:  #374a35;
   --white:     #ffffff;
-  --border:    #e4dbd2;
-  --shadow:    rgba(44,35,32,.08);
+  --border:    #d0e0cd;
+  --shadow:    rgba(30,46,30,.08);
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -156,7 +156,8 @@ nav a:hover::after, nav a.active::after { width: 100%; }
 
 /* ── Hero ───────────────────────────────────── */
 .hero {
-  min-height: 100vh;
+  min-height: 70vh;
+  max-height: 780px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   padding-top: 72px;
@@ -1220,4 +1221,164 @@ footer {
   .form-row.thirds { grid-template-columns: 1fr; }
   .hero-cta { flex-direction: column; }
   .cart-drawer { width: 100%; }
+}
+
+/* Hero photo/video crossfade */
+#hero-media { position: relative; }
+#hero-photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.9s ease;
+}
+#hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.9s ease;
+}
+/* ── Occasions Grid ──────────────────────────────────────────── */
+.occasions-section { background: var(--cream); }
+.occasions-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.occasion-card {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 3 / 4;
+  display: block;
+}
+.occasion-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s cubic-bezier(.4,0,.2,1);
+}
+.occasion-card:hover img { transform: scale(1.06); }
+.occasion-overlay {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 40px 28px 28px;
+  background: linear-gradient(transparent, rgba(30,46,30,.72));
+  color: var(--white);
+}
+.occasion-overlay h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 30px;
+  font-weight: 300;
+  margin-bottom: 6px;
+  letter-spacing: .02em;
+}
+.occasion-overlay span {
+  font-size: 11px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  opacity: .85;
+}
+
+/* ── Event Feature Banner ────────────────────────────────────── */
+.efb-wrap { padding: 80px 0; }
+.efb-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 72px;
+  align-items: center;
+}
+.efb-tag {
+  display: block;
+  font-size: 11px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.efb-text h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(36px, 4vw, 58px);
+  font-weight: 300;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+.efb-text p { font-size: 15px; margin-bottom: 16px; opacity: .85; }
+.efb-code {
+  display: inline-block;
+  border: 1px solid currentColor;
+  padding: 8px 20px;
+  font-size: 13px;
+  letter-spacing: .1em;
+  margin-bottom: 32px;
+  opacity: .9;
+}
+.efb-image {
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+}
+.efb-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s ease;
+}
+.efb-image:hover img { transform: scale(1.04); }
+
+/* ── Shop the Look ───────────────────────────────────────────── */
+.stl-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.stl-card {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 2 / 3;
+  cursor: pointer;
+}
+.stl-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s cubic-bezier(.4,0,.2,1);
+}
+.stl-card:hover img { transform: scale(1.05); }
+.stl-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 40px 32px;
+  background: linear-gradient(transparent 45%, rgba(30,46,30,.65));
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  color: var(--white);
+  text-align: center;
+}
+.stl-card:hover .stl-overlay { opacity: 1; }
+.stl-overlay p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px;
+  font-weight: 300;
+  margin-bottom: 18px;
+  letter-spacing: .04em;
+}
+
+/* ── Responsive ──────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .occasions-grid { grid-template-columns: repeat(2, 1fr); }
+  .stl-grid { grid-template-columns: repeat(2, 1fr); }
+  .efb-inner { grid-template-columns: 1fr; gap: 40px; }
+  .efb-image { aspect-ratio: 16/9; }
+}
+@media (max-width: 600px) {
+  .occasions-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .stl-grid { grid-template-columns: 1fr; }
 }
