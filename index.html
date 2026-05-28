@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>USJEWLR — Fine Jewelry</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Announcement -->
+<div class="announcement">Free shipping on orders over $150 &nbsp;·&nbsp; Use code WELCOME10 for 10% off your first order</div>
+
+<!-- Header -->
+<header id="header">
+  <div class="header-inner">
+    <a href="index.html" class="logo">US<span>JEWLR</span></a>
+    <nav id="main-nav">
+      <a href="index.html" class="active">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="product.html">Collections</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <button onclick="window.location.href='shop.html'">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        Search
+      </button>
+      <button id="btn-open-cart">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        Bag <span class="cart-count">0</span>
+      </button>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-content">
+    <span class="section-label">New Collection 2026</span>
+    <h1>Adorn<br>Yourself in<br><em>Timeless</em><br>Elegance</h1>
+    <p>Handcrafted fine jewelry that celebrates life's most cherished moments. Each piece tells a story as unique as you are.</p>
+    <div class="hero-cta">
+      <a href="shop.html" class="btn btn-filled">Shop Collection</a>
+      <a href="about.html" class="btn">Our Story</a>
+    </div>
+  </div>
+  <div class="hero-image">
+    <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=800&q=80" alt="Fine jewelry collection">
+    <div class="hero-badge">
+      <strong>Est. 2018</strong>
+      <span>Handcrafted in USA</span>
+    </div>
+  </div>
+</section>
+
+<!-- Categories -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Browse by Category</span>
+      <h2>Shop Our <em>Collections</em></h2>
+    </div>
+    <div class="categories-grid">
+      <a href="shop.html?cat=rings" class="category-card">
+        <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=400&q=80" alt="Rings">
+        <div class="category-info">
+          <h3>Rings</h3>
+          <span>48 pieces</span>
+        </div>
+      </a>
+      <a href="shop.html?cat=necklaces" class="category-card">
+        <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=400&q=80" alt="Necklaces">
+        <div class="category-info">
+          <h3>Necklaces</h3>
+          <span>62 pieces</span>
+        </div>
+      </a>
+      <a href="shop.html?cat=earrings" class="category-card">
+        <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=400&q=80" alt="Earrings">
+        <div class="category-info">
+          <h3>Earrings</h3>
+          <span>55 pieces</span>
+        </div>
+      </a>
+      <a href="shop.html?cat=bracelets" class="category-card">
+        <img src="https://images.unsplash.com/photo-1573408301185-9519f94816fc?w=400&q=80" alt="Bracelets">
+        <div class="category-info">
+          <h3>Bracelets</h3>
+          <span>39 pieces</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Featured Products -->
+<section class="section" style="background:var(--beige)">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Bestsellers</span>
+      <h2>Featured <em>Pieces</em></h2>
+      <p>Discover our most-loved jewelry, crafted with the finest materials.</p>
+    </div>
+    <div class="products-grid">
+
+      <div class="product-card" onclick="window.location='product.html'">
+        <div class="product-card-image">
+          <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=400&q=80" alt="Diamond Solitaire Ring">
+          <span class="product-badge sale">Bestseller</span>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="event.stopPropagation();addToCart('r001','Diamond Solitaire Ring',2450,'https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=400&q=80','14K Gold')">Add to Bag</button>
+            <button class="btn-wishlist">Save to Wishlist</button>
+          </div>
+        </div>
+        <div class="product-info">
+          <div class="stars">★★★★★</div>
+          <h4>Diamond Solitaire Ring</h4>
+          <div class="product-sub">14K Yellow Gold · 1.0ct</div>
+          <div class="product-price">$2,450</div>
+        </div>
+      </div>
+
+      <div class="product-card" onclick="window.location='product.html'">
+        <div class="product-card-image">
+          <img src="https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?w=400&q=80" alt="Pearl Drop Necklace">
+          <div class="product-actions">
+            <button class="btn-cart" onclick="event.stopPropagation();addToCart('n001','Pearl Drop Necklace',385,'https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?w=400&q=80','Sterling Silver')">Add to Bag</button>
+            <button class="btn-wishlist">Save to Wishlist</button>
+          </div>
+        </div>
+        <div class="product-info">
+          <div class="stars">★★★★★</div>
+          <h4>Pearl Drop Necklace</h4>
+          <div class="product-sub">Sterling Silver · 18"</div>
+          <div class="product-price">$385</div>
+        </div>
+      </div>
+
+      <div class="product-card" onclick="window.location='product.html'">
+        <div class="product-card-image">
+          <img src="https://images.unsplash.com/photo-1596944924591-5c9e04d6ce67?w=400&q=80" alt="Gold Hoop Earrings">
+          <span class="product-badge sale">Sale</span>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="event.stopPropagation();addToCart('e001','Gold Hoop Earrings',195,'https://images.unsplash.com/photo-1596944924591-5c9e04d6ce67?w=400&q=80','18K Gold')">Add to Bag</button>
+            <button class="btn-wishlist">Save to Wishlist</button>
+          </div>
+        </div>
+        <div class="product-info">
+          <div class="stars">★★★★☆</div>
+          <h4>Gold Hoop Earrings</h4>
+          <div class="product-sub">18K Gold · 30mm</div>
+          <div class="product-price"><span class="original">$260</span><span class="sale-price">$195</span></div>
+        </div>
+      </div>
+
+      <div class="product-card" onclick="window.location='product.html'">
+        <div class="product-card-image">
+          <img src="https://images.unsplash.com/photo-1602751584552-8ba73aad10e1?w=400&q=80" alt="Tennis Bracelet">
+          <span class="product-badge">New</span>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="event.stopPropagation();addToCart('b001','Diamond Tennis Bracelet',3200,'https://images.unsplash.com/photo-1602751584552-8ba73aad10e1?w=400&q=80','14K White Gold')">Add to Bag</button>
+            <button class="btn-wishlist">Save to Wishlist</button>
+          </div>
+        </div>
+        <div class="product-info">
+          <div class="stars">★★★★★</div>
+          <h4>Diamond Tennis Bracelet</h4>
+          <div class="product-sub">14K White Gold · 3.0ct tw</div>
+          <div class="product-price">$3,200</div>
+        </div>
+      </div>
+
+    </div>
+    <div style="text-align:center;margin-top:48px">
+      <a href="shop.html" class="btn">View All Jewelry</a>
+    </div>
+  </div>
+</section>
+
+<!-- Features Strip -->
+<div class="features-strip">
+  <div class="container">
+    <div class="features-grid">
+      <div class="feature-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        <h5>Free Shipping</h5>
+        <p>On all orders over $150</p>
+      </div>
+      <div class="feature-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <h5>Certified Authentic</h5>
+        <p>GIA certified diamonds</p>
+      </div>
+      <div class="feature-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 .49-3.25"/></svg>
+        <h5>30-Day Returns</h5>
+        <p>Hassle-free return policy</p>
+      </div>
+      <div class="feature-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        <h5>Lifetime Warranty</h5>
+        <p>Craftsmanship guaranteed</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- New Arrivals -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Just Arrived</span>
+      <h2>New <em>Arrivals</em></h2>
+    </div>
+    <div class="products-grid">
+      <div class="product-card" onclick="window.location='product.html'">
+        <div class="product-card-image">
+          <img src="https://images.unsplash.com/photo-1583292650898-7d22cd27ca6f?w=400&q=80" alt="Sapphire Ring">
+          <span class="product-badge">New</span>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="event.stopPropagation();addToCart('r002','Sapphire Halo Ring',1850,'https://images.unsplash.com/photo-1583292650898-7d22cd27ca6f?w=400&q=80','Platinum')">Add to Bag</button>
+            <button class="btn-wishlist">Save to Wishlist</button>
+          </div>
+        </div>
+        <div class="product-info">
+          <div class="stars">★★★★★</div>
+          <h4>Sapphire Halo Ring</h4>
+          <div class="product-sub">Platinum · 1.5ct</div>
+          <div class="product-price">$1,850</div>
+        </div>
+      </div>
+      <div class="product-card" onclick="window.location='product.html'">
+        <div class="product-card-image">
+          <img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=400&q=80" alt="Layered Chain Necklace">
+          <span class="product-badge">New</span>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="event.stopPropagation();addToCart('n002','Layered Chain Necklace',295,'https://images.unsplash.com/photo-1617038220319-276d3cfab638?w=400&q=80','14K Gold')">Add to Bag</button>
+            <button class="btn-wishlist">Save to Wishlist</button>
+          </div>
+        </div>
+        <div class="product-info">
+          <div class="stars">★★★★☆</div>
+          <h4>Layered Chain Necklace</h4>
+          <div class="product-sub">14K Gold · 16–18"</div>
+          <div class="product-price">$295</div>
+        </div>
+      </div>
+      <div class="product-card" onclick="window.location='product.html'">
+        <div class="product-card-image">
+          <img src="https://images.unsplash.com/photo-1589207212797-cfd578c00985?w=400&q=80" alt="Stud Earrings">
+          <span class="product-badge">New</span>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="event.stopPropagation();addToCart('e002','Diamond Stud Earrings',780,'https://images.unsplash.com/photo-1589207212797-cfd578c00985?w=400&q=80','14K White Gold')">Add to Bag</button>
+            <button class="btn-wishlist">Save to Wishlist</button>
+          </div>
+        </div>
+        <div class="product-info">
+          <div class="stars">★★★★★</div>
+          <h4>Diamond Stud Earrings</h4>
+          <div class="product-sub">14K White Gold · 0.5ct</div>
+          <div class="product-price">$780</div>
+        </div>
+      </div>
+      <div class="product-card" onclick="window.location='product.html'">
+        <div class="product-card-image">
+          <img src="https://images.unsplash.com/photo-1561828995-aa79a2db86dd?w=400&q=80" alt="Charm Bracelet">
+          <span class="product-badge">New</span>
+          <div class="product-actions">
+            <button class="btn-cart" onclick="event.stopPropagation();addToCart('b002','Charm Bracelet',445,'https://images.unsplash.com/photo-1561828995-aa79a2db86dd?w=400&q=80','Sterling Silver')">Add to Bag</button>
+            <button class="btn-wishlist">Save to Wishlist</button>
+          </div>
+        </div>
+        <div class="product-info">
+          <div class="stars">★★★★★</div>
+          <h4>Charm Bracelet</h4>
+          <div class="product-sub">Sterling Silver · Adjustable</div>
+          <div class="product-price">$445</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="section testimonials">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Client Stories</span>
+      <h2>What Our <em>Clients</em> Say</h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <blockquote>"The diamond ring I purchased for my anniversary exceeded every expectation. The quality is extraordinary and the packaging made it feel truly special."</blockquote>
+        <div class="testimonial-author">— Sarah M., New York</div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <blockquote>"I've ordered from USJEWLR three times now. Each piece is more beautiful than the last. The customer service is impeccable and delivery always on time."</blockquote>
+        <div class="testimonial-author">— Jennifer L., Chicago</div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <blockquote>"My pearl necklace is absolutely stunning. I receive compliments every time I wear it. Worth every penny — you can feel the craftsmanship."</blockquote>
+        <div class="testimonial-author">— Amanda K., Los Angeles</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Newsletter -->
+<section class="newsletter">
+  <div class="container">
+    <span class="section-label">Stay Connected</span>
+    <h2>Join the USJEWLR Circle</h2>
+    <p>Be the first to know about new collections, exclusive events, and private sales.</p>
+    <form class="newsletter-form">
+      <input type="email" placeholder="Your email address">
+      <button type="submit">Subscribe</button>
+    </form>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">US<span>JEWLR</span></div>
+        <p>Fine jewelry crafted with passion and precision. Each piece is a testament to timeless elegance and superior craftsmanship.</p>
+        <div class="footer-social">
+          <a href="#">in</a>
+          <a href="#">tw</a>
+          <a href="#">ig</a>
+          <a href="#">fb</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Shop</h5>
+        <ul>
+          <li><a href="shop.html">All Jewelry</a></li>
+          <li><a href="shop.html?cat=rings">Rings</a></li>
+          <li><a href="shop.html?cat=necklaces">Necklaces</a></li>
+          <li><a href="shop.html?cat=earrings">Earrings</a></li>
+          <li><a href="shop.html?cat=bracelets">Bracelets</a></li>
+          <li><a href="shop.html?sale=true">Sale</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Help</h5>
+        <ul>
+          <li><a href="#">Size Guide</a></li>
+          <li><a href="#">Shipping Info</a></li>
+          <li><a href="#">Returns & Exchanges</a></li>
+          <li><a href="#">Care Instructions</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="about.html">Our Story</a></li>
+          <li><a href="#">Sustainability</a></li>
+          <li><a href="#">Press</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 USJEWLR. All rights reserved.</span>
+      <div class="payment-icons">
+        <span>VISA</span>
+        <span>MC</span>
+        <span>AMEX</span>
+        <span>PayPal</span>
+        <span>Apple Pay</span>
+        <span>Google Pay</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Cart Drawer -->
+<div class="cart-overlay" id="cart-overlay"></div>
+<div class="cart-drawer" id="cart-drawer">
+  <div class="drawer-header">
+    <h3>Your Bag</h3>
+    <button class="drawer-close" onclick="closeCartDrawer()">×</button>
+  </div>
+  <div class="drawer-items" id="drawer-items"></div>
+  <div class="drawer-footer">
+    <div class="drawer-total">
+      <span>Total</span>
+      <span id="drawer-total">$0.00</span>
+    </div>
+    <a href="cart.html" class="btn btn-filled">View Bag</a>
+    <a href="checkout.html" class="btn">Checkout</a>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

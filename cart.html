@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Bag — USJEWLR</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="announcement">Free shipping on orders over $150 &nbsp;·&nbsp; Use code WELCOME10 for 10% off</div>
+
+<header id="header">
+  <div class="header-inner">
+    <a href="index.html" class="logo">US<span>JEWLR</span></a>
+    <nav id="main-nav">
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="product.html">Collections</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <button id="btn-open-cart">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        Bag <span class="cart-count">0</span>
+      </button>
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="page-hero">
+  <div class="container">
+    <span class="section-label">Review</span>
+    <h1>Your <em style="font-style:italic;color:var(--stone)">Bag</em></h1>
+    <div class="breadcrumb"><a href="index.html">Home</a> / Your Bag</div>
+  </div>
+</div>
+
+<main class="container">
+  <div class="cart-layout">
+    <div class="cart-items">
+      <div id="cart-items-container"></div>
+      <div style="margin-top:24px;display:flex;justify-content:space-between;align-items:center">
+        <a href="shop.html" style="font-size:13px;color:var(--stone);letter-spacing:.06em">← Continue Shopping</a>
+        <button onclick="showToast('Cart updated')" class="btn" style="padding:10px 24px;font-size:11px">Update Cart</button>
+      </div>
+    </div>
+
+    <div>
+      <div class="cart-summary">
+        <h3>Order Summary</h3>
+        <div class="summary-row"><span>Subtotal</span><span id="cart-subtotal">$0.00</span></div>
+        <div class="summary-row"><span>Shipping</span><span id="cart-shipping">$0.00</span></div>
+        <div class="summary-row"><span>Tax (estimated)</span><span id="cart-tax">—</span></div>
+        <div class="summary-row total"><span>Total</span><span id="cart-total">$0.00</span></div>
+
+        <div class="promo-field">
+          <input type="text" id="promo-input" placeholder="Promo code">
+          <button onclick="applyPromo()">Apply</button>
+        </div>
+
+        <a href="checkout.html" class="btn btn-filled">Proceed to Checkout</a>
+
+        <div style="margin-top:20px;text-align:center">
+          <div style="font-size:11px;color:var(--mid);letter-spacing:.08em;margin-bottom:12px">SECURE PAYMENT</div>
+          <div class="payment-icons" style="justify-content:center">
+            <span>VISA</span><span>MC</span><span>AMEX</span><span>PayPal</span><span>Apple Pay</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gifting -->
+      <div style="background:var(--beige);border:1px solid var(--border);padding:24px;margin-top:20px">
+        <h5 style="font-family:'Cormorant Garamond',serif;font-size:17px;margin-bottom:12px">Gift Options</h5>
+        <label style="display:flex;align-items:center;gap:10px;font-size:13px;cursor:pointer;margin-bottom:10px">
+          <input type="checkbox" style="accent-color:var(--stone)"> Add gift wrapping ($8.00)
+        </label>
+        <label style="display:flex;align-items:center;gap:10px;font-size:13px;cursor:pointer">
+          <input type="checkbox" style="accent-color:var(--stone)"> Include gift message
+        </label>
+        <textarea id="gift-msg" placeholder="Write a personal message..." style="display:none;width:100%;border:1px solid var(--border);padding:10px;font-size:13px;margin-top:12px;height:80px;outline:none;font-family:inherit;resize:none;background:var(--white)"></textarea>
+      </div>
+    </div>
+  </div>
+</main>
+
+<section class="section" style="padding:60px 0">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">You May Also Like</span>
+      <h2>Add to Your <em>Collection</em></h2>
+    </div>
+    <div class="products-grid">
+      <div class="product-card" onclick="window.location='product.html'">
+        <div class="product-card-image"><img src="https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?w=400&q=80" alt="Pearl Necklace"><div class="product-actions"><button class="btn-cart" onclick="event.stopPropagation();addToCart('n001','Pearl Drop Necklace',385,'https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?w=400&q=80','Sterling Silver')">Add to Bag</button></div></div>
+        <div class="product-info"><div class="stars">★★★★★</div><h4>Pearl Drop Necklace</h4><div class="product-sub">Sterling Silver · 18"</div><div class="product-price">$385</div></div>
+      </div>
+      <div class="product-card" onclick="window.location='product.html'">
+        <div class="product-card-image"><img src="https://images.unsplash.com/photo-1596944924591-5c9e04d6ce67?w=400&q=80" alt="Hoop Earrings"><div class="product-actions"><button class="btn-cart" onclick="event.stopPropagation();addToCart('e001','Gold Hoop Earrings',195,'https://images.unsplash.com/photo-1596944924591-5c9e04d6ce67?w=400&q=80','18K Gold')">Add to Bag</button></div></div>
+        <div class="product-info"><div class="stars">★★★★☆</div><h4>Gold Hoop Earrings</h4><div class="product-sub">18K Gold · 30mm</div><div class="product-price">$195</div></div>
+      </div>
+      <div class="product-card" onclick="window.location='product.html'">
+        <div class="product-card-image"><img src="https://images.unsplash.com/photo-1589207212797-cfd578c00985?w=400&q=80" alt="Diamond Studs"><div class="product-actions"><button class="btn-cart" onclick="event.stopPropagation();addToCart('e002','Diamond Stud Earrings',780,'https://images.unsplash.com/photo-1589207212797-cfd578c00985?w=400&q=80','14K White Gold')">Add to Bag</button></div></div>
+        <div class="product-info"><div class="stars">★★★★★</div><h4>Diamond Stud Earrings</h4><div class="product-sub">14K White Gold</div><div class="product-price">$780</div></div>
+      </div>
+      <div class="product-card" onclick="window.location='product.html'">
+        <div class="product-card-image"><img src="https://images.unsplash.com/photo-1561828995-aa79a2db86dd?w=400&q=80" alt="Charm Bracelet"><div class="product-actions"><button class="btn-cart" onclick="event.stopPropagation();addToCart('b002','Charm Bracelet',445,'https://images.unsplash.com/photo-1561828995-aa79a2db86dd?w=400&q=80','Sterling Silver')">Add to Bag</button></div></div>
+        <div class="product-info"><div class="stars">★★★★★</div><h4>Charm Bracelet</h4><div class="product-sub">Sterling Silver</div><div class="product-price">$445</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><div class="logo">US<span>JEWLR</span></div><p>Fine jewelry crafted with passion and precision.</p><div class="footer-social"><a href="#">in</a><a href="#">tw</a><a href="#">ig</a><a href="#">fb</a></div></div>
+      <div class="footer-col"><h5>Shop</h5><ul><li><a href="shop.html">All Jewelry</a></li><li><a href="shop.html?cat=rings">Rings</a></li><li><a href="shop.html?cat=necklaces">Necklaces</a></li></ul></div>
+      <div class="footer-col"><h5>Help</h5><ul><li><a href="#">Shipping</a></li><li><a href="#">Returns</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="footer-col"><h5>Company</h5><ul><li><a href="about.html">Our Story</a></li><li><a href="#">Privacy Policy</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 USJEWLR. All rights reserved.</span>
+      <div class="payment-icons"><span>VISA</span><span>MC</span><span>AMEX</span><span>PayPal</span><span>Apple Pay</span></div>
+    </div>
+  </div>
+</footer>
+
+<div class="cart-overlay" id="cart-overlay"></div>
+<div class="cart-drawer" id="cart-drawer">
+  <div class="drawer-header"><h3>Your Bag</h3><button class="drawer-close" onclick="closeCartDrawer()">×</button></div>
+  <div class="drawer-items" id="drawer-items"></div>
+  <div class="drawer-footer">
+    <div class="drawer-total"><span>Total</span><span id="drawer-total">$0.00</span></div>
+    <a href="cart.html" class="btn btn-filled">View Bag</a>
+    <a href="checkout.html" class="btn">Checkout</a>
+  </div>
+</div>
+
+<script src="script.js"></script>
+<script>
+  // Gift message toggle
+  document.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+    cb.addEventListener('change', function() {
+      if (this.nextSibling.textContent.includes('message')) {
+        document.getElementById('gift-msg').style.display = this.checked ? 'block' : 'none';
+      }
+    });
+  });
+  // Tax estimate
+  document.addEventListener('DOMContentLoaded', () => {
+    const tax = cartTotal() * 0.08;
+    document.getElementById('cart-tax').textContent = tax > 0 ? '$' + tax.toFixed(2) : '—';
+  });
+</script>
+</body>
+</html>

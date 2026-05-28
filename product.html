@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diamond Solitaire Ring — USJEWLR</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="announcement">Free shipping on orders over $150 &nbsp;·&nbsp; Use code WELCOME10 for 10% off</div>
+
+<header id="header">
+  <div class="header-inner">
+    <a href="index.html" class="logo">US<span>JEWLR</span></a>
+    <nav id="main-nav">
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="product.html" class="active">Collections</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <button onclick="window.location.href='shop.html'">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        Search
+      </button>
+      <button id="btn-open-cart">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        Bag <span class="cart-count">0</span>
+      </button>
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+  <div style="padding-top:100px">
+    <div class="breadcrumb" style="margin-bottom:32px"><a href="index.html">Home</a> / <a href="shop.html">Shop</a> / <a href="shop.html?cat=rings">Rings</a> / Diamond Solitaire Ring</div>
+  </div>
+
+  <div class="product-detail">
+
+    <!-- Gallery -->
+    <div class="product-gallery">
+      <div class="gallery-main">
+        <img id="main-img" src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=800&q=80" alt="Diamond Solitaire Ring">
+      </div>
+      <div class="gallery-thumbs">
+        <div class="gallery-thumb active">
+          <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=200&q=80" alt="View 1">
+        </div>
+        <div class="gallery-thumb">
+          <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=200&q=80" alt="View 2">
+        </div>
+        <div class="gallery-thumb">
+          <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=200&q=80" alt="View 3">
+        </div>
+        <div class="gallery-thumb">
+          <img src="https://images.unsplash.com/photo-1583292650898-7d22cd27ca6f?w=200&q=80" alt="View 4">
+        </div>
+      </div>
+    </div>
+
+    <!-- Info -->
+    <div class="product-detail-info">
+      <span class="section-label">Engagement Rings</span>
+      <h1>Diamond Solitaire Ring</h1>
+      <div class="product-detail-rating">
+        <span class="stars">★★★★★</span>
+        <span>4.9 (124 reviews)</span>
+        <span style="color:var(--stone)">· In Stock</span>
+      </div>
+      <div class="product-detail-price">$2,450</div>
+
+      <p style="font-size:14px;color:var(--charcoal);line-height:1.9;margin-bottom:28px">
+        A timeless symbol of love. This classic solitaire features a brilliant-cut diamond set in a four-prong setting that lets the stone take center stage. Crafted by hand in our New York atelier.
+      </p>
+
+      <!-- Metal Option -->
+      <div class="product-options">
+        <label>Metal: <strong id="metal-selected">14K Yellow Gold</strong></label>
+        <div class="option-swatches">
+          <div class="swatch active" onclick="selectMetal(this,'14K Yellow Gold')">14K Yellow</div>
+          <div class="swatch" onclick="selectMetal(this,'14K White Gold')">14K White</div>
+          <div class="swatch" onclick="selectMetal(this,'18K Yellow Gold')">18K Yellow</div>
+          <div class="swatch" onclick="selectMetal(this,'Platinum')">Platinum</div>
+          <div class="swatch" onclick="selectMetal(this,'14K Rose Gold')">Rose Gold</div>
+        </div>
+      </div>
+
+      <!-- Stone Weight -->
+      <div class="product-options">
+        <label>Diamond Size: <strong id="stone-selected">1.0 ct</strong></label>
+        <div class="option-swatches">
+          <div class="swatch" onclick="selectStone(this,'0.5 ct')">0.5 ct</div>
+          <div class="swatch active" onclick="selectStone(this,'1.0 ct')">1.0 ct</div>
+          <div class="swatch" onclick="selectStone(this,'1.5 ct')">1.5 ct</div>
+          <div class="swatch" onclick="selectStone(this,'2.0 ct')">2.0 ct</div>
+        </div>
+      </div>
+
+      <!-- Ring Size -->
+      <div class="product-options">
+        <label>Ring Size: <strong id="size-selected">6</strong> &nbsp;<a href="#" style="font-size:11px;color:var(--stone)">Size Guide</a></label>
+        <div class="option-swatches">
+          <div class="swatch" onclick="selectSize(this,'4')">4</div>
+          <div class="swatch" onclick="selectSize(this,'4.5')">4.5</div>
+          <div class="swatch" onclick="selectSize(this,'5')">5</div>
+          <div class="swatch" onclick="selectSize(this,'5.5')">5.5</div>
+          <div class="swatch active" onclick="selectSize(this,'6')">6</div>
+          <div class="swatch" onclick="selectSize(this,'6.5')">6.5</div>
+          <div class="swatch" onclick="selectSize(this,'7')">7</div>
+          <div class="swatch" onclick="selectSize(this,'7.5')">7.5</div>
+          <div class="swatch" onclick="selectSize(this,'8')">8</div>
+        </div>
+      </div>
+
+      <!-- Quantity -->
+      <div class="qty-selector">
+        <button class="qty-minus">−</button>
+        <input type="number" value="1" min="1" id="qty">
+        <button class="qty-plus">+</button>
+      </div>
+
+      <div class="add-to-cart-row">
+        <button class="btn btn-filled" onclick="addProductToCart()">Add to Bag</button>
+        <button class="btn" style="flex:0;padding:16px 20px" onclick="showToast('Saved to wishlist')">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </button>
+      </div>
+
+      <div class="secure-badges">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Secure checkout &nbsp;·&nbsp; SSL Encrypted &nbsp;·&nbsp; 30-day returns
+      </div>
+
+      <div class="product-meta">
+        <div><strong>SKU:</strong> DSR-14Y-100</div>
+        <div><strong>Metal:</strong> 14K Yellow Gold</div>
+        <div><strong>Diamond:</strong> GIA Certified, VS1 Clarity, F Color</div>
+        <div><strong>Setting:</strong> Classic Four-Prong Solitaire</div>
+        <div><strong>Delivery:</strong> 5–7 business days</div>
+      </div>
+
+      <!-- Tabs -->
+      <div class="product-tabs">
+        <div class="tab-headers">
+          <button class="tab-header active" data-tab="tab-desc">Description</button>
+          <button class="tab-header" data-tab="tab-details">Details</button>
+          <button class="tab-header" data-tab="tab-shipping">Shipping</button>
+          <button class="tab-header" data-tab="tab-reviews">Reviews (124)</button>
+        </div>
+        <div class="tab-content active" id="tab-desc">
+          <p>This classic solitaire engagement ring is the epitome of timeless elegance. The brilliant-cut diamond is set in a simple yet stunning four-prong setting that maximizes the stone's brilliance and fire. The sleek band tapers elegantly toward the center stone, creating a graceful silhouette that complements any hand shape.</p>
+          <p style="margin-top:14px">Each USJEWLR diamond is hand-selected by our gemologists and comes with a GIA certificate of authenticity. This ring is available in a range of metals and diamond sizes to suit every taste and budget.</p>
+        </div>
+        <div class="tab-content" id="tab-details">
+          <ul style="padding-left:20px;line-height:2.2;font-size:14px;color:var(--charcoal)">
+            <li>Diamond: Round Brilliant Cut, 1.0ct, VS1 Clarity, F Color</li>
+            <li>Metal: 14K Yellow Gold (also available in white, rose, platinum)</li>
+            <li>Setting: Classic Four-Prong Solitaire</li>
+            <li>Band Width: 2.0mm</li>
+            <li>Finish: Polished</li>
+            <li>GIA Certified Diamond</li>
+            <li>Complimentary ring sizing within 30 days</li>
+            <li>Handcrafted in New York City</li>
+          </ul>
+        </div>
+        <div class="tab-content" id="tab-shipping">
+          <p style="margin-bottom:14px"><strong>Standard Shipping</strong> (5–7 business days): FREE on orders over $150</p>
+          <p style="margin-bottom:14px"><strong>Express Shipping</strong> (2–3 business days): $24.95</p>
+          <p style="margin-bottom:14px"><strong>Overnight Shipping</strong> (next business day): $49.95</p>
+          <p style="font-size:13px;color:var(--mid)">All orders are fully insured and shipped in our signature gift packaging. Signature required upon delivery for orders over $500.</p>
+        </div>
+        <div class="tab-content" id="tab-reviews">
+          <div style="display:flex;flex-direction:column;gap:24px">
+            <div style="border-bottom:1px solid var(--border);padding-bottom:24px">
+              <div style="display:flex;justify-content:space-between;margin-bottom:8px">
+                <span class="stars">★★★★★</span>
+                <span style="font-size:12px;color:var(--mid)">March 2026</span>
+              </div>
+              <p style="font-size:13px;color:var(--charcoal);margin-bottom:6px"><strong>Sarah M.</strong> — Verified Purchase</p>
+              <p style="font-size:14px;color:var(--charcoal)">"Absolutely stunning ring. My fiancé proposed with this and I couldn't be happier. The diamond catches the light beautifully from every angle."</p>
+            </div>
+            <div style="border-bottom:1px solid var(--border);padding-bottom:24px">
+              <div style="display:flex;justify-content:space-between;margin-bottom:8px">
+                <span class="stars">★★★★★</span>
+                <span style="font-size:12px;color:var(--mid)">February 2026</span>
+              </div>
+              <p style="font-size:13px;color:var(--charcoal);margin-bottom:6px"><strong>Michael R.</strong> — Verified Purchase</p>
+              <p style="font-size:14px;color:var(--charcoal)">"Exceptional quality. Ordered the platinum version with a 1.5ct stone. The GIA certificate gave us total confidence. Highly recommend."</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Related Products -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-label">You May Also Like</span>
+      <h2>Complete the <em>Look</em></h2>
+    </div>
+    <div class="products-grid">
+      <div class="product-card" onclick="window.location='product.html'">
+        <div class="product-card-image">
+          <img src="https://images.unsplash.com/photo-1583292650898-7d22cd27ca6f?w=400&q=80" alt="Sapphire Ring">
+          <div class="product-actions"><button class="btn-cart" onclick="event.stopPropagation();addToCart('r002','Sapphire Halo Ring',1850,'https://images.unsplash.com/photo-1583292650898-7d22cd27ca6f?w=400&q=80','Platinum')">Add to Bag</button></div>
+        </div>
+        <div class="product-info"><div class="stars">★★★★★</div><h4>Sapphire Halo Ring</h4><div class="product-sub">Platinum · 1.5ct</div><div class="product-price">$1,850</div></div>
+      </div>
+      <div class="product-card" onclick="window.location='product.html'">
+        <div class="product-card-image">
+          <img src="https://images.unsplash.com/photo-1602751584552-8ba73aad10e1?w=400&q=80" alt="Tennis Bracelet">
+          <div class="product-actions"><button class="btn-cart" onclick="event.stopPropagation();addToCart('b001','Tennis Bracelet',3200,'https://images.unsplash.com/photo-1602751584552-8ba73aad10e1?w=400&q=80','14K White Gold')">Add to Bag</button></div>
+        </div>
+        <div class="product-info"><div class="stars">★★★★★</div><h4>Diamond Tennis Bracelet</h4><div class="product-sub">14K White Gold · 3.0ct</div><div class="product-price">$3,200</div></div>
+      </div>
+      <div class="product-card" onclick="window.location='product.html'">
+        <div class="product-card-image">
+          <img src="https://images.unsplash.com/photo-1589207212797-cfd578c00985?w=400&q=80" alt="Diamond Studs">
+          <div class="product-actions"><button class="btn-cart" onclick="event.stopPropagation();addToCart('e002','Diamond Stud Earrings',780,'https://images.unsplash.com/photo-1589207212797-cfd578c00985?w=400&q=80','14K White Gold')">Add to Bag</button></div>
+        </div>
+        <div class="product-info"><div class="stars">★★★★★</div><h4>Diamond Stud Earrings</h4><div class="product-sub">14K White Gold · 0.5ct</div><div class="product-price">$780</div></div>
+      </div>
+      <div class="product-card" onclick="window.location='product.html'">
+        <div class="product-card-image">
+          <img src="https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?w=400&q=80" alt="Pearl Necklace">
+          <div class="product-actions"><button class="btn-cart" onclick="event.stopPropagation();addToCart('n001','Pearl Drop Necklace',385,'https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?w=400&q=80','Sterling Silver')">Add to Bag</button></div>
+        </div>
+        <div class="product-info"><div class="stars">★★★★★</div><h4>Pearl Drop Necklace</h4><div class="product-sub">Sterling Silver · 18"</div><div class="product-price">$385</div></div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><div class="logo">US<span>JEWLR</span></div><p>Fine jewelry crafted with passion and precision.</p><div class="footer-social"><a href="#">in</a><a href="#">tw</a><a href="#">ig</a><a href="#">fb</a></div></div>
+      <div class="footer-col"><h5>Shop</h5><ul><li><a href="shop.html">All Jewelry</a></li><li><a href="shop.html?cat=rings">Rings</a></li><li><a href="shop.html?cat=necklaces">Necklaces</a></li><li><a href="shop.html?cat=earrings">Earrings</a></li></ul></div>
+      <div class="footer-col"><h5>Help</h5><ul><li><a href="#">Size Guide</a></li><li><a href="#">Shipping</a></li><li><a href="#">Returns</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="footer-col"><h5>Company</h5><ul><li><a href="about.html">Our Story</a></li><li><a href="#">Sustainability</a></li><li><a href="#">Privacy Policy</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 USJEWLR. All rights reserved.</span>
+      <div class="payment-icons"><span>VISA</span><span>MC</span><span>AMEX</span><span>PayPal</span><span>Apple Pay</span></div>
+    </div>
+  </div>
+</footer>
+
+<div class="cart-overlay" id="cart-overlay"></div>
+<div class="cart-drawer" id="cart-drawer">
+  <div class="drawer-header"><h3>Your Bag</h3><button class="drawer-close" onclick="closeCartDrawer()">×</button></div>
+  <div class="drawer-items" id="drawer-items"></div>
+  <div class="drawer-footer">
+    <div class="drawer-total"><span>Total</span><span id="drawer-total">$0.00</span></div>
+    <a href="cart.html" class="btn btn-filled">View Bag</a>
+    <a href="checkout.html" class="btn">Checkout</a>
+  </div>
+</div>
+
+<script src="script.js"></script>
+<script>
+  function selectMetal(el, val) {
+    el.closest('.option-swatches').querySelectorAll('.swatch').forEach(s => s.classList.remove('active'));
+    el.classList.add('active');
+    document.getElementById('metal-selected').textContent = val;
+  }
+  function selectStone(el, val) {
+    el.closest('.option-swatches').querySelectorAll('.swatch').forEach(s => s.classList.remove('active'));
+    el.classList.add('active');
+    document.getElementById('stone-selected').textContent = val;
+  }
+  function selectSize(el, val) {
+    el.closest('.option-swatches').querySelectorAll('.swatch').forEach(s => s.classList.remove('active'));
+    el.classList.add('active');
+    document.getElementById('size-selected').textContent = val;
+  }
+  function addProductToCart() {
+    const metal = document.getElementById('metal-selected').textContent;
+    const stone = document.getElementById('stone-selected').textContent;
+    const size  = document.getElementById('size-selected').textContent;
+    const qty   = parseInt(document.getElementById('qty').value) || 1;
+    for (let i = 0; i < qty; i++) {
+      addToCart('r001', 'Diamond Solitaire Ring', 2450,
+        'https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=400&q=80',
+        `${metal} · ${stone} · Size ${size}`);
+    }
+  }
+</script>
+</body>
+</html>
