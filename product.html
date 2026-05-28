@@ -45,20 +45,20 @@
     <!-- Gallery -->
     <div class="product-gallery">
       <div class="gallery-main">
-        <img id="main-img" src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=800&q=80" alt="Diamond Solitaire Ring">
+        <img id="main-img" src="images/detail-main.jpg" alt="Diamond Solitaire Ring">
       </div>
       <div class="gallery-thumbs">
         <div class="gallery-thumb active">
-          <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=200&q=80" alt="View 1">
+          <img src="images/detail-main.jpg" alt="View 1">
         </div>
         <div class="gallery-thumb">
-          <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=200&q=80" alt="View 2">
+          <img src="images/prod-1.jpg" alt="View 2">
         </div>
         <div class="gallery-thumb">
-          <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=200&q=80" alt="View 3">
+          <img src="images/prod-3.jpg" alt="View 3">
         </div>
         <div class="gallery-thumb">
-          <img src="https://images.unsplash.com/photo-1583292650898-7d22cd27ca6f?w=200&q=80" alt="View 4">
+          <img src="images/about.jpg" alt="View 4">
         </div>
       </div>
     </div>
@@ -207,29 +207,29 @@
     <div class="products-grid">
       <div class="product-card" onclick="window.location='product.html'">
         <div class="product-card-image">
-          <img src="https://images.unsplash.com/photo-1583292650898-7d22cd27ca6f?w=400&q=80" alt="Sapphire Ring">
-          <div class="product-actions"><button class="btn-cart" onclick="event.stopPropagation();addToCart('r002','Sapphire Halo Ring',1850,'https://images.unsplash.com/photo-1583292650898-7d22cd27ca6f?w=400&q=80','Platinum')">Add to Bag</button></div>
+          <img src="images/prod-5.jpg" alt="Sapphire Ring">
+          <div class="product-actions"><button class="btn-cart" onclick="event.stopPropagation();addToCart('r002','Sapphire Halo Ring',1850,'images/prod-5.jpg','Platinum')">Add to Bag</button></div>
         </div>
         <div class="product-info"><div class="stars">★★★★★</div><h4>Sapphire Halo Ring</h4><div class="product-sub">Platinum · 1.5ct</div><div class="product-price">$1,850</div></div>
       </div>
       <div class="product-card" onclick="window.location='product.html'">
         <div class="product-card-image">
-          <img src="https://images.unsplash.com/photo-1602751584552-8ba73aad10e1?w=400&q=80" alt="Tennis Bracelet">
-          <div class="product-actions"><button class="btn-cart" onclick="event.stopPropagation();addToCart('b001','Tennis Bracelet',3200,'https://images.unsplash.com/photo-1602751584552-8ba73aad10e1?w=400&q=80','14K White Gold')">Add to Bag</button></div>
+          <img src="images/prod-4.jpg" alt="Tennis Bracelet">
+          <div class="product-actions"><button class="btn-cart" onclick="event.stopPropagation();addToCart('b001','Tennis Bracelet',3200,'images/prod-4.jpg','14K White Gold')">Add to Bag</button></div>
         </div>
         <div class="product-info"><div class="stars">★★★★★</div><h4>Diamond Tennis Bracelet</h4><div class="product-sub">14K White Gold · 3.0ct</div><div class="product-price">$3,200</div></div>
       </div>
       <div class="product-card" onclick="window.location='product.html'">
         <div class="product-card-image">
-          <img src="https://images.unsplash.com/photo-1589207212797-cfd578c00985?w=400&q=80" alt="Diamond Studs">
-          <div class="product-actions"><button class="btn-cart" onclick="event.stopPropagation();addToCart('e002','Diamond Stud Earrings',780,'https://images.unsplash.com/photo-1589207212797-cfd578c00985?w=400&q=80','14K White Gold')">Add to Bag</button></div>
+          <img src="images/prod-7.jpg" alt="Diamond Studs">
+          <div class="product-actions"><button class="btn-cart" onclick="event.stopPropagation();addToCart('e002','Diamond Stud Earrings',780,'images/prod-7.jpg','14K White Gold')">Add to Bag</button></div>
         </div>
         <div class="product-info"><div class="stars">★★★★★</div><h4>Diamond Stud Earrings</h4><div class="product-sub">14K White Gold · 0.5ct</div><div class="product-price">$780</div></div>
       </div>
       <div class="product-card" onclick="window.location='product.html'">
         <div class="product-card-image">
-          <img src="https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?w=400&q=80" alt="Pearl Necklace">
-          <div class="product-actions"><button class="btn-cart" onclick="event.stopPropagation();addToCart('n001','Pearl Drop Necklace',385,'https://images.unsplash.com/photo-1506630448388-4e683c67ddb0?w=400&q=80','Sterling Silver')">Add to Bag</button></div>
+          <img src="images/prod-2.jpg" alt="Pearl Necklace">
+          <div class="product-actions"><button class="btn-cart" onclick="event.stopPropagation();addToCart('n001','Pearl Drop Necklace',385,'images/prod-2.jpg','Sterling Silver')">Add to Bag</button></div>
         </div>
         <div class="product-info"><div class="stars">★★★★★</div><h4>Pearl Drop Necklace</h4><div class="product-sub">Sterling Silver · 18"</div><div class="product-price">$385</div></div>
       </div>
@@ -288,7 +288,7 @@
     const qty   = parseInt(document.getElementById('qty').value) || 1;
     for (let i = 0; i < qty; i++) {
       addToCart('r001', 'Diamond Solitaire Ring', 2450,
-        'https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=400&q=80',
+        'images/detail-main.jpg',
         `${metal} · ${stone} · Size ${size}`);
     }
   }
