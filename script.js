@@ -282,8 +282,156 @@ function initContactForm() {
   });
 }
 
+// ── Page Transitions ──────────────────────────
+function initPageTransition() {
+  const overlay = document.getElementById('page-transition');
+  if (!overlay) return;
+
+  // Fade out on load
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => { overlay.classList.add('out'); });
+  });
+
+  // Fade in on internal link clicks, then navigate
+  document.addEventListener('click', e => {
+    const link = e.target.closest('a[href]');
+    if (!link) return;
+    const href = link.getAttribute('href');
+    if (!href || href.startsWith('#') || href.startsWith('http') ||
+        href.startsWith('mailto') || href.startsWith('tel') ||
+        link.target === '_blank') return;
+
+    e.preventDefault();
+    overlay.classList.remove('out');
+    setTimeout(() => { window.location.href = href; }, 480);
+  });
+}
+
+// ── Scroll Reveal ─────────────────────────────
+function initScrollReveal() {
+  const selectors = [
+    { sel: '.section-header',              cls: 'up' },
+    { sel: '.feature-item',                cls: 'up',    stagger: true },
+    { sel: '.product-card',                cls: 'up',    stagger: true },
+    { sel: '.category-card',               cls: 'up',    stagger: true },
+    { sel: '.testimonial-card',            cls: 'up',    stagger: true },
+    { sel: '.value-card',                  cls: 'up',    stagger: true },
+    { sel: '.footer-col',                  cls: 'up',    stagger: true },
+    { sel: '.footer-brand',                cls: 'up' },
+    { sel: '.about-intro-text',            cls: 'right' },
+    { sel: '.about-intro img',             cls: 'left' },
+    { sel: '.newsletter h2',               cls: 'up' },
+    { sel: '.newsletter p',                cls: 'up' },
+    { sel: '.newsletter-form',             cls: 'up' },
+    { sel: '.hero-badge',                  cls: 'left' },
+    { sel: '.checkout-step',               cls: 'up',    stagger: true },
+    { sel: '.order-summary-box',           cls: 'right' },
+    { sel: '.cart-summary',                cls: 'right' },
+    { sel: '.contact-info',                cls: 'left' },
+    { sel: '.contact-form-box',            cls: 'right' },
+    { sel: '.success-icon',                cls: 'up' },
+  ];
+
+  const delays = ['d1','d2','d3','d4','d5','d6','d7','d8'];
+
+  // Tag elements
+  selectors.forEach(({ sel, cls, stagger }) => {
+    document.querySelectorAll(sel).forEach((el, i) => {
+      if (el.classList.contains('reveal')) return;
+      el.classList.add('reveal', cls);
+      if (stagger) el.classList.add(delays[i % delays.length]);
+    });
+  });
+
+  // Observe
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+}
+
+// ── Events Bar ────────────────────────────────
+function initEventsBar() {
+  const bar = document.getElementById('announcement-bar');
+  if (!bar) return;
+
+  // Find active event (force-active OR within date range)
+  const today = new Date();
+  today.setHours(0,0,0,0);
+
+  let active = null;
+  if (typeof PROMO_EVENTS !== 'undefined') {
+    active = PROMO_EVENTS.find(ev => {
+      if (ev.active) return true;
+      const s = new Date(ev.start); s.setHours(0,0,0,0);
+      const e = new Date(ev.end);   e.setHours(23,59,59,999);
+      return today >= s && today <= e;
+    }) || null;
+  }
+
+  const promo = active || (typeof DEFAULT_PROMO !== 'undefined' ? DEFAULT_PROMO : null);
+  if (!promo) return;
+
+  // Apply colors
+  bar.style.background = promo.bg || '#2c2320';
+  bar.style.color       = promo.color || '#d9cdc1';
+
+  if (active) {
+    // Event mode: show event message + code
+    const codePart = active.code
+      ? `<span class="ann-divider">·</span>
+         <span class="ann-badge">
+           ${active.discount}
+           <span class="ann-copy" onclick="copyCode('${active.code}')" title="Copy code">
+             ${active.code}
+           </span>
+         </span>`
+      : '';
+    bar.innerHTML = `
+      <div class="ann-inner">
+        <span class="ann-event-name">${active.name}</span>
+        <span class="ann-message">${active.message}</span>
+        ${codePart}
+      </div>`;
+  } else {
+    // Default: rotating ticker
+    const msgs = promo.messages || [promo.message];
+    const items = [...msgs, ...msgs].map(m =>
+      `<span style="padding:0 48px">${m}</span>`).join('');
+    const codePart = promo.code
+      ? ` <span class="ann-badge" style="margin-left:12px">
+           ${promo.discount}
+           <span class="ann-copy" onclick="copyCode('${promo.code}')" title="Copy">
+             ${promo.code}
+           </span>
+         </span>`
+      : '';
+
+    if (msgs.length > 1) {
+      bar.innerHTML = `<div class="ann-ticker">${items}</div>`;
+    } else {
+      bar.innerHTML = `<div class="ann-inner"><span class="ann-message">${msgs[0]}</span>${codePart}</div>`;
+    }
+  }
+}
+
+function copyCode(code) {
+  navigator.clipboard?.writeText(code).then(() => showToast(`Code "${code}" copied!`))
+    .catch(() => showToast(`Use code: ${code}`));
+}
+
 // ── Init ──────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
+  initPageTransition();
+  initEventsBar();
+  initScrollReveal();
+
   updateCartUI();
   initMobileNav();
   initGallery();
